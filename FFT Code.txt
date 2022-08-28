@@ -1,0 +1,219 @@
+
+%%This is FFT code 
+clear all
+clc
+
+%-------------------File Pathes------------------------------------------
+
+training_files_had=dir('C:/Users/USER/OneDrive/Documents/NewCut/had/*.wav');
+training_files_hade=dir('C:/Users/USER/OneDrive/Documents/NewCut/hade/*.wav');
+training_files_hard=dir('C:/Users/USER/OneDrive/Documents/NewCut/hard/*.wav');
+training_files_head=dir('C:/Users/USER/OneDrive/Documents/NewCut/head/*.wav');
+training_files_heard=dir('C:/Users/USER/OneDrive/Documents/NewCut/heard/*.wav');
+training_files_heed=dir('C:/Users/USER/OneDrive/Documents/NewCut/heed/*.wav');
+training_files_hid=dir('C:/Users/USER/OneDrive/Documents/NewCut/hid/*.wav');
+training_files_hide=dir('C:/Users/USER/OneDrive/Documents/NewCut/hide/*.wav');
+training_files_hoard=dir('C:/Users/USER/OneDrive/Documents/NewCut/hoard/*.wav');
+training_files_hod=dir('C:/Users/USER/OneDrive/Documents/NewCut/hod/*.wav');
+training_files_hood=dir('C:/Users/USER/OneDrive/Documents/NewCut/hood/*.wav');
+training_files_hudd=dir('C:/Users/USER/OneDrive/Documents/NewCut/hudd/*.wav');
+training_files_whod=dir('C:/Users/USER/OneDrive/Documents/NewCut/whod/*.wav');
+
+
+
+
+%---------------------Testing------------------------------------------
+
+ [Test,fs] = audioread('C:/Users/USER/OneDrive/Documents/NewCut/Test/5.wav');
+ TestSignal=abs(fft(Test,128));
+ TestSignal=TestSignal(1:65);
+ 
+%--------------------Data Arrays--------------------------------------- 
+ 
+ALL_Data_Mean=[];
+
+ data_had=[];
+ data_hade=[];
+ data_hard=[];
+ data_head=[];
+ data_heard=[];
+ data_heed=[];
+ data_hid=[];
+ data_hide=[];
+ data_hoard=[];
+ data_hod=[];
+ data_hood=[];
+ data_hudd=[];
+ data_whod=[];
+
+
+ %---------------------Training Data---------------------------------------
+ 
+ for i =1:7
+    
+    %Had
+    file_path_had=strcat(training_files_had(i).folder,'\',training_files_had(i).name);
+    [Had2,fs] = audioread(file_path_had);
+    HadSample=abs(fft(Had2,128));
+    HadSample=HadSample(1:65);
+    distance_had=sqrt(sum(TestSignal - HadSample).^2);
+    data_had=[data_had distance_had];
+    
+    
+    %Hade
+    file_path_hade=strcat(training_files_hade(i).folder,'\',training_files_hade(i).name);
+    [Hade2,fs] = audioread(file_path_hade);
+    HadeSample=abs(fft(Hade2,128));
+    HadeSample=HadeSample(1:65);
+    distance_hade=sqrt(sum(TestSignal - HadeSample).^2);
+    data_hade=[data_hade distance_hade];
+
+    %Hard
+    file_path_hard=strcat(training_files_hard(i).folder,'\',training_files_hard(i).name);
+    [Hard2,fs] = audioread(file_path_hard);
+    HardSample=abs(fft(Hard2,128));
+    HardSample=HardSample(1:65);
+    distance_hard=sqrt(sum(TestSignal - HardSample).^2);
+    data_hard=[data_hard distance_hard];
+    
+    
+    %Head
+    file_path_head=strcat(training_files_head(i).folder,'\',training_files_head(i).name);
+    [Head2,fs] = audioread(file_path_head);
+    HeadSample=abs(fft(Head2,128));
+    HeadSample=HeadSample(1:65);
+    distance_head=sqrt(sum(TestSignal - HeadSample).^2);
+    data_head=[data_head distance_head];
+    
+    %Heard
+    file_path_heard=strcat(training_files_heard(i).folder,'\',training_files_heard(i).name);
+    [Heard2,fs] = audioread(file_path_heard);
+    HeardSample=abs(fft(Heard2,128));
+    HeardSample=HeardSample(1:65);
+    distance_heard=sqrt(sum(TestSignal - HeardSample).^2);
+    data_heard=[data_heard distance_heard];
+    
+     %Heed
+    file_path_heed=strcat(training_files_heed(i).folder,'\',training_files_heed(i).name);
+    [Heed2,fs] = audioread(file_path_heed);
+    HeedSample=abs(fft(Heed2,128));
+    HeedSample=HeedSample(1:65);
+    distance_heed=sqrt(sum(TestSignal - HeedSample).^2);
+    data_heed=[data_heed distance_heed];
+    
+     %Hid
+    file_path_hid=strcat(training_files_hid(i).folder,'\',training_files_hid(i).name);
+    [Hid2,fs] = audioread(file_path_hid);
+    HidSample=abs(fft(Hid2,128));
+    HidSample=HidSample(1:65);
+    distance_hid=sqrt(sum(TestSignal - HidSample).^2);
+    data_hid=[data_hid distance_hid];
+    
+     %Hide
+    file_path_hide=strcat(training_files_hide(i).folder,'\',training_files_hide(i).name);
+    [Hide2,fs] = audioread(file_path_hide);
+    HideSample=abs(fft(Hide2,128));
+    HideSample=HideSample(1:65);
+    distance_hide=sqrt(sum(TestSignal - HideSample).^2);
+    data_hide=[data_hide distance_hide];
+    
+     %Hoard
+    file_path_hoard=strcat(training_files_hoard(i).folder,'\',training_files_hoard(i).name);
+    [Hoard2,fs] = audioread(file_path_hoard);
+    HoardSample=abs(fft(Hoard2,128));
+    HoardSample=HoardSample(1:65);
+    distance_hoard=sqrt(sum(TestSignal - HoardSample).^2);
+    data_hoard=[data_hoard distance_hoard];
+    
+    %Hod
+    file_path_hod=strcat(training_files_hod(i).folder,'\',training_files_hod(i).name);
+    [Hod2,fs] = audioread(file_path_hod);
+    HodSample=abs(fft(Hod2,128));
+    HodSample=HodSample(1:65);
+    distance_hod=sqrt(sum(TestSignal - HodSample).^2);
+    data_hod=[data_hod distance_hod];
+    
+    %Hood
+    file_path_hood=strcat(training_files_heed(i).folder,'\',training_files_hood(i).name);
+    [Hood2,fs] = audioread(file_path_hood);
+    HoodSample=abs(fft(Hood2,128));
+    HoodSample=HoodSample(1:65);
+    distance_hood=sqrt(sum(TestSignal - HoodSample).^2);
+    data_hood=[data_hood distance_hood];
+    
+    %Hudd
+    file_path_hudd=strcat(training_files_hudd(i).folder,'\',training_files_hudd(i).name);
+    [Hudd2,fs] = audioread(file_path_hudd);
+    HuddSample=abs(fft(Hudd2,128));
+    HuddSample=HuddSample(1:65);
+    distance_hudd=sqrt(sum(TestSignal - HuddSample).^2);
+    data_hudd=[data_hudd distance_hudd];
+    
+    %Whod
+    file_path_whod=strcat(training_files_whod(i).folder,'\',training_files_whod(i).name);
+    [Whod2,fs] = audioread(file_path_whod);
+    WhodSample=abs(fft(Whod2,128));
+    WhodSample=WhodSample(1:65);
+    distance_whod=sqrt(sum(TestSignal - WhodSample).^2);
+    data_whod=[data_whod distance_whod];
+end
+
+ 
+
+
+
+
+
+%------------------------------Analysis--------------------------
+Had_Mean=mean(data_had)
+Hade_Mean=mean(data_hade)
+Hard_Mean=mean(data_hard)
+Head_Mean=mean(data_head)
+Heard_Mean=mean(data_heard)
+Heed_Mean=mean(data_heed)
+Hid_Mean=mean(data_hid)
+Hide_Mean=mean(data_hide)
+Hoard_Mean=mean(data_hoard)
+Hod_Mean=mean(data_hod)
+Hood_Mean=mean(data_hood)
+Hudd_Mean=mean(data_hudd)
+Whod_Mean=mean(data_whod)
+
+
+
+%------------------------------Result---------------------------
+% Result = [Had_Mean,Hade_Mean,Hard_Mean,Head_Mean,Heard_Mean,Heed_Mean ];
+        
+    Result = [Had_Mean,Hade_Mean,Hard_Mean,Head_Mean,Heard_Mean,Heed_Mean,Hid_Mean,Hide_Mean,Hoard_Mean,Hod_Mean,Hood_Mean,Hudd_Mean,Whod_Mean];
+
+     [ num,index ] = min(Result);
+    
+     if (index==1)
+       fprintf('It is Had ')
+       elseif (index==2)
+       fprintf('It is Hade ')
+       elseif (index==3)
+       fprintf('It is Hard ')
+       elseif (index==4)
+       fprintf('It is Head ')
+       elseif (index==5)
+       fprintf('It is Heard ')  
+       elseif (index==6)
+       fprintf('It is Heed ')
+       elseif (index==7)
+       fprintf('It is Hid ')
+       elseif (index==8)
+       fprintf('It is Hide ')
+       elseif (index==9)
+       fprintf('It is Hoard ')
+       elseif (index==10)
+       fprintf('It is Hod ')
+       elseif (index==11)
+       fprintf('It is Hood ')
+       elseif (index==12)
+       fprintf('It is Hudd ')
+       elseif (index==13)
+       fprintf('It is Whod ')
+    
+     end
+

@@ -1,0 +1,343 @@
+
+clear all
+clc
+%-------------- Find the Signal template (reference)  -----------------------------------
+
+% Had
+[Had1,fs1] = audioread('C:/project_dataset_cut2/had/1.wav');
+[Had2,fs2] = audioread('C:/project_dataset_cut2/had/2.wav');
+[Had3,fs3] = audioread('C:/project_dataset_cut2/had/3.wav');
+[Had4,fs4] = audioread('C:/project_dataset_cut2/had/4.wav');
+[Had5,fs5] = audioread('C:/project_dataset_cut2/had/5.wav');
+[Had6,fs6] = audioread('C:/project_dataset_cut2/had/6.wav');
+[Had7,fs7] = audioread('C:/project_dataset_cut2/had/7.wav');
+
+Had1 = interp1(linspace(0,1,length(Had1)), Had1, (linspace(0,1,3000)));
+Had2 = interp1(linspace(0,1,length(Had2)), Had2, (linspace(0,1,3000)));
+Had3 = interp1(linspace(0,1,length(Had3)), Had3, (linspace(0,1,3000)));
+Had4 = interp1(linspace(0,1,length(Had4)), Had4, (linspace(0,1,3000)));
+Had5 = interp1(linspace(0,1,length(Had5)), Had5, (linspace(0,1,3000)));
+Had6 = interp1(linspace(0,1,length(Had6)), Had6, (linspace(0,1,3000)));
+Had7 = interp1(linspace(0,1,length(Had7)), Had7, (linspace(0,1,3000)));
+
+
+Hads = [Had1;Had2;Had3;Had4;Had5;Had6;Had7];
+HadAvg = mean(Hads);
+%%plot (HadAvg)
+
+%Hade
+[Hade1,fs1] = audioread('C:/project_dataset_cut2/hade/1.wav');
+[Hade2,fs2] = audioread('C:/project_dataset_cut2/hade/2.wav');
+[Hade3,fs3] = audioread('C:/project_dataset_cut2/hade/3.wav');
+[Hade4,fs4] = audioread('C:/project_dataset_cut2/hade/4.wav');
+[Hade5,fs5] = audioread('C:/project_dataset_cut2/hade/5.wav');
+[Hade6,fs6] = audioread('C:/project_dataset_cut2/hade/6.wav');
+[Hade7,fs7] = audioread('C:/project_dataset_cut2/hade/7.wav');
+
+Hade1 = interp1(linspace(0,1,length(Hade1)), Hade1, (linspace(0,1,6000)));
+Hade2 = interp1(linspace(0,1,length(Hade2)), Hade2, (linspace(0,1,6000)));
+Hade3 = interp1(linspace(0,1,length(Hade3)), Hade3, (linspace(0,1,6000)));
+Hade4 = interp1(linspace(0,1,length(Hade4)), Hade4, (linspace(0,1,6000)));
+Hade5 = interp1(linspace(0,1,length(Hade5)), Hade5, (linspace(0,1,6000)));
+Hade6 = interp1(linspace(0,1,length(Hade6)), Hade6, (linspace(0,1,6000)));
+Hade7 = interp1(linspace(0,1,length(Hade7)), Hade7, (linspace(0,1,6000)));
+
+Hades = [Hade1;Hade2;Hade3;Hade4;Hade5;Hade6;Hade7;];
+HadeAvg = mean(Hades);
+%%plot(HadAvg)
+
+%Hard
+[Hard1,fs1] = audioread('C:/project_dataset_cut2/hard/1.wav');
+[Hard2,fs2] = audioread('C:/project_dataset_cut2/hard/2.wav');
+[Hard3,fs3] = audioread('C:/project_dataset_cut2/hard/3.wav');
+[Hard4,fs4] = audioread('C:/project_dataset_cut2/hard/4.wav');
+[Hard5,fs5] = audioread('C:/project_dataset_cut2/hard/5.wav');
+[Hard6,fs6] = audioread('C:/project_dataset_cut2/hard/6.wav');
+[Hard7,fs7] = audioread('C:/project_dataset_cut2/hard/7.wav');
+
+Hard1 = interp1(linspace(0,1,length(Hard1)), Hard1, (linspace(0,1,6000)));
+Hard2 = interp1(linspace(0,1,length(Hard2)), Hard2, (linspace(0,1,6000)));
+Hard3 = interp1(linspace(0,1,length(Hard3)), Hard3, (linspace(0,1,6000)));
+Hard4 = interp1(linspace(0,1,length(Hard4)), Hard4, (linspace(0,1,6000)));
+Hard5 = interp1(linspace(0,1,length(Hard5)), Hard5, (linspace(0,1,6000)));
+Hard6 = interp1(linspace(0,1,length(Hard6)), Hard6, (linspace(0,1,6000)));
+Hard7 = interp1(linspace(0,1,length(Hard7)), Hard7, (linspace(0,1,6000)));
+
+Hards = [Hard1;Hard2;Hard3;Hard4;Hard5;Hard6;Hard7];
+HardAvg = mean(Hards);
+
+
+%Head
+[Head1,fs1] = audioread('C:/project_dataset_cut2/head/1.wav');
+[Head2,fs2] = audioread('C:/project_dataset_cut2/head/2.wav');
+[Head3,fs3] = audioread('C:/project_dataset_cut2/head/3.wav');
+[Head4,fs4] = audioread('C:/project_dataset_cut2/head/4.wav');
+[Head5,fs5] = audioread('C:/project_dataset_cut2/head/5.wav');
+[Head6,fs6] = audioread('C:/project_dataset_cut2/head/6.wav');
+[Head7,fs7] = audioread('C:/project_dataset_cut2/head/7.wav');
+
+Head1 = interp1(linspace(0,1,length(Head1)), Head1, (linspace(0,1,6500)));
+Head2 = interp1(linspace(0,1,length(Head2)), Head2, (linspace(0,1,6500)));
+Head3 = interp1(linspace(0,1,length(Head3)), Head3, (linspace(0,1,6500)));
+Head4 = interp1(linspace(0,1,length(Head4)), Head4, (linspace(0,1,6500)));
+Head5 = interp1(linspace(0,1,length(Head5)), Head5, (linspace(0,1,6500)));
+Head6 = interp1(linspace(0,1,length(Head6)), Head6, (linspace(0,1,6500)));
+Head7 = interp1(linspace(0,1,length(Head7)), Head7, (linspace(0,1,6500)));
+
+
+Heads = [Head1;Head2;Head3;Head4;Head5;Head6;Head7];
+HeadAvg = mean(Heads);
+
+%heard
+[Heard1,fs1] = audioread('C:/project_dataset_cut2/heard/1.wav');
+[Heard2,fs2] = audioread('C:/project_dataset_cut2/heard/2.wav');
+[Heard3,fs3] = audioread('C:/project_dataset_cut2/heard/3.wav');
+[Heard4,fs4] = audioread('C:/project_dataset_cut2/heard/4.wav');
+[Heard5,fs5] = audioread('C:/project_dataset_cut2/heard/5.wav');
+[Heard6,fs6] = audioread('C:/project_dataset_cut2/heard/6.wav');
+[Heard7,fs7] = audioread('C:/project_dataset_cut2/heard/7.wav');
+
+Heard1 = interp1(linspace(0,1,length(Heard1)), Heard1, (linspace(0,1,7500)));
+Heard2 = interp1(linspace(0,1,length(Heard2)), Heard2, (linspace(0,1,7500)));
+Heard3 = interp1(linspace(0,1,length(Heard3)), Heard3, (linspace(0,1,7500)));
+Heard4 = interp1(linspace(0,1,length(Heard4)), Heard4, (linspace(0,1,7500)));
+Heard5 = interp1(linspace(0,1,length(Heard5)), Heard5, (linspace(0,1,7500)));
+Heard6 = interp1(linspace(0,1,length(Heard6)), Heard6, (linspace(0,1,7500)));
+Heard7 = interp1(linspace(0,1,length(Heard7)), Heard7, (linspace(0,1,7500)));
+
+
+Heards = [Heard1;Heard2;Heard3;Heard4;Heard5;Heard6;Heard7;];
+HeardAvg = mean(Heards);
+
+%heed
+[Heed1,fs1] = audioread('C:/project_dataset_cut2/heed/1.wav');
+[Heed2,fs2] = audioread('C:/project_dataset_cut2/heed/2.wav');
+[Heed3,fs3] = audioread('C:/project_dataset_cut2/heed/3.wav');
+[Heed4,fs4] = audioread('C:/project_dataset_cut2/heed/4.wav');
+[Heed5,fs5] = audioread('C:/project_dataset_cut2/heed/5.wav');
+[Heed6,fs6] = audioread('C:/project_dataset_cut2/heed/6.wav');
+[Heed7,fs7] = audioread('C:/project_dataset_cut2/heed/7.wav');
+
+Heed1 = interp1(linspace(0,1,length(Heed1)), Heed1, (linspace(0,1,8000)));
+Heed2 = interp1(linspace(0,1,length(Heed2)), Heed2, (linspace(0,1,8000)));
+Heed3 = interp1(linspace(0,1,length(Heed3)), Heed3, (linspace(0,1,8000)));
+Heed4 = interp1(linspace(0,1,length(Heed4)), Heed4, (linspace(0,1,8000)));
+Heed5 = interp1(linspace(0,1,length(Heed5)), Heed5, (linspace(0,1,8000)));
+Heed6 = interp1(linspace(0,1,length(Heed6)), Heed6, (linspace(0,1,8000)));
+Heed7 = interp1(linspace(0,1,length(Heed7)), Heed7, (linspace(0,1,8000)));
+
+
+Heeds = [Heed1;Heed2;Heed3;Heed4;Heed5;Heed6;Heed7;];
+HeedAvg = mean(Heeds);
+
+%hid
+[Hid1,fs1] = audioread('C:/project_dataset_cut2/hid/1.wav');
+[Hid2,fs2] = audioread('C:/project_dataset_cut2/hid/2.wav');
+[Hid3,fs3] = audioread('C:/project_dataset_cut2/hid/3.wav');
+[Hid4,fs4] = audioread('C:/project_dataset_cut2/hid/4.wav');
+[Hid5,fs5] = audioread('C:/project_dataset_cut2/hid/5.wav');
+[Hid6,fs6] = audioread('C:/project_dataset_cut2/hid/6.wav');
+[Hid7,fs7] = audioread('C:/project_dataset_cut2/hid/7.wav');
+
+Hid1 = interp1(linspace(0,1,length(Hid1)), Hid1, (linspace(0,1,6000)));
+Hid2 = interp1(linspace(0,1,length(Hid2)), Hid2, (linspace(0,1,6000)));
+Hid3 = interp1(linspace(0,1,length(Hid3)), Hid3, (linspace(0,1,6000)));
+Hid4 = interp1(linspace(0,1,length(Hid4)), Hid4, (linspace(0,1,6000)));
+Hid5 = interp1(linspace(0,1,length(Hid5)), Hid5, (linspace(0,1,6000)));
+Hid6 = interp1(linspace(0,1,length(Hid6)), Hid6, (linspace(0,1,6000)));
+Hid7 = interp1(linspace(0,1,length(Hid7)), Hid7, (linspace(0,1,6000)));
+
+Hids = [Hid1;Hid2;Hid3;Hid4;Hid5;Hid6;Hid7;];
+HidAvg = mean(Hids);
+
+%hide
+[Hide1,fs1] = audioread('C:/project_dataset_cut2/hide/1.wav');
+[Hide2,fs2] = audioread('C:/project_dataset_cut2/hide/2.wav');
+[Hide3,fs3] = audioread('C:/project_dataset_cut2/hide/3.wav');
+[Hide4,fs4] = audioread('C:/project_dataset_cut2/hide/4.wav');
+[Hide5,fs5] = audioread('C:/project_dataset_cut2/hide/5.wav');
+[Hide6,fs6] = audioread('C:/project_dataset_cut2/hide/6.wav');
+[Hide7,fs7] = audioread('C:/project_dataset_cut2/hide/7.wav');
+
+Hide1 = interp1(linspace(0,1,length(Hide1)), Hide1, (linspace(0,1,7000)));
+Hide2 = interp1(linspace(0,1,length(Hide2)), Hide2, (linspace(0,1,7000)));
+Hide3 = interp1(linspace(0,1,length(Hide3)), Hide3, (linspace(0,1,7000)));
+Hide4 = interp1(linspace(0,1,length(Hide4)), Hide4, (linspace(0,1,7000)));
+Hide5 = interp1(linspace(0,1,length(Hide5)), Hide5, (linspace(0,1,7000)));
+Hide6 = interp1(linspace(0,1,length(Hide6)), Hide6, (linspace(0,1,7000)));
+Hide7 = interp1(linspace(0,1,length(Hide7)), Hide7, (linspace(0,1,7000)));
+
+Hides = [Hide1;Hide2;Hide3;Hide4;Hide5;Hide6;Hide7;];
+HideAvg = mean(Hides);
+
+%hoard
+[Hoard1,fs1] = audioread('C:/project_dataset_cut2/hoard/1.wav');
+[Hoard2,fs2] = audioread('C:/project_dataset_cut2/hoard/2.wav');
+[Hoard3,fs3] = audioread('C:/project_dataset_cut2/hoard/3.wav');
+[Hoard4,fs4] = audioread('C:/project_dataset_cut2/hoard/4.wav');
+[Hoard5,fs5] = audioread('C:/project_dataset_cut2/hoard/5.wav');
+[Hoard6,fs6] = audioread('C:/project_dataset_cut2/hoard/6.wav');
+[Hoard7,fs7] = audioread('C:/project_dataset_cut2/hoard/7.wav');
+
+Hoard1 = interp1(linspace(0,1,length(Hoard1)), Hoard1, (linspace(0,1,8000)));
+Hoard2 = interp1(linspace(0,1,length(Hoard2)), Hoard2, (linspace(0,1,8000)));
+Hoard3 = interp1(linspace(0,1,length(Hoard3)), Hoard3, (linspace(0,1,8000)));
+Hoard4 = interp1(linspace(0,1,length(Hoard4)), Hoard4, (linspace(0,1,8000)));
+Hoard5 = interp1(linspace(0,1,length(Hoard5)), Hoard5, (linspace(0,1,8000)));
+Hoard6 = interp1(linspace(0,1,length(Hoard6)), Hoard6, (linspace(0,1,8000)));
+Hoard7 = interp1(linspace(0,1,length(Hoard7)), Hoard7, (linspace(0,1,8000)));
+
+
+Hoards = [Hoard1;Hoard2;Hoard3;Hoard4;Hoard5;Hoard6;Hoard7;];
+HoardAvg = mean(Hoards);
+
+%hod
+[Hod1,fs1] = audioread('C:/project_dataset_cut2/hod/1.wav');
+[Hod2,fs2] = audioread('C:/project_dataset_cut2/hod/2.wav');
+[Hod3,fs3] = audioread('C:/project_dataset_cut2/hod/3.wav');
+[Hod4,fs4] = audioread('C:/project_dataset_cut2/hod/4.wav');
+[Hod5,fs5] = audioread('C:/project_dataset_cut2/hod/5.wav');
+[Hod6,fs6] = audioread('C:/project_dataset_cut2/hod/6.wav');
+[Hod7,fs7] = audioread('C:/project_dataset_cut2/hod/7.wav');
+
+Hod1 = interp1(linspace(0,1,length(Hod1)), Hod1, (linspace(0,1,6000)));
+Hod2 = interp1(linspace(0,1,length(Hod2)), Hod2, (linspace(0,1,6000)));
+Hod3 = interp1(linspace(0,1,length(Hod3)), Hod3, (linspace(0,1,6000)));
+Hod4 = interp1(linspace(0,1,length(Hod4)), Hod4, (linspace(0,1,6000)));
+Hod5 = interp1(linspace(0,1,length(Hod5)), Hod5, (linspace(0,1,6000)));
+Hod6 = interp1(linspace(0,1,length(Hod6)), Hod6, (linspace(0,1,6000)));
+Hod7 = interp1(linspace(0,1,length(Hod7)), Hod7, (linspace(0,1,6000)));
+
+
+Hods = [Hod1;Hod2;Hod3;Hod4;Hod5;Hod6;Hod7;];
+HodAvg = mean(Hods);
+
+%hood
+[Hood1,fs1] = audioread('C:/project_dataset_cut2/hood/1.wav');
+[Hood2,fs2] = audioread('C:/project_dataset_cut2/hood/2.wav');
+[Hood3,fs3] = audioread('C:/project_dataset_cut2/hood/3.wav');
+[Hood4,fs4] = audioread('C:/project_dataset_cut2/hood/4.wav');
+[Hood5,fs5] = audioread('C:/project_dataset_cut2/hood/5.wav');
+[Hood6,fs6] = audioread('C:/project_dataset_cut2/hood/6.wav');
+[Hood7,fs7] = audioread('C:/project_dataset_cut2/hood/7.wav');
+
+Hood1 = interp1(linspace(0,1,length(Hood1)), Hood1, (linspace(0,1,5000)));
+Hood2 = interp1(linspace(0,1,length(Hood2)), Hood2, (linspace(0,1,5000)));
+Hood3 = interp1(linspace(0,1,length(Hood3)), Hood3, (linspace(0,1,5000)));
+Hood4 = interp1(linspace(0,1,length(Hood4)), Hood4, (linspace(0,1,5000)));
+Hood5 = interp1(linspace(0,1,length(Hood5)), Hood5, (linspace(0,1,5000)));
+Hood6 = interp1(linspace(0,1,length(Hood6)), Hood6, (linspace(0,1,5000)));
+Hood7 = interp1(linspace(0,1,length(Hood7)), Hood7, (linspace(0,1,5000)));
+
+
+Hoods = [Hood1;Hood2;Hood3;Hood4;Hood5;Hood6;Hood7;];
+HoodAvg = mean(Hoods);
+
+%hudd
+[Hudd1,fs1] = audioread('C:/project_dataset_cut2/hudd/1.wav');
+[Hudd2,fs2] = audioread('C:/project_dataset_cut2/hudd/2.wav');
+[Hudd3,fs3] = audioread('C:/project_dataset_cut2/hudd/3.wav');
+[Hudd4,fs4] = audioread('C:/project_dataset_cut2/hudd/4.wav');
+[Hudd5,fs5] = audioread('C:/project_dataset_cut2/hudd/5.wav');
+[Hudd6,fs6] = audioread('C:/project_dataset_cut2/hudd/6.wav');
+[Hudd7,fs7] = audioread('C:/project_dataset_cut2/hudd/7.wav');
+
+Hudd1 = interp1(linspace(0,1,length(Hudd1)), Hudd1, (linspace(0,1,6000)));
+Hudd2 = interp1(linspace(0,1,length(Hudd2)), Hudd2, (linspace(0,1,6000)));
+Hudd3 = interp1(linspace(0,1,length(Hudd3)), Hudd3, (linspace(0,1,6000)));
+Hudd4 = interp1(linspace(0,1,length(Hudd4)), Hudd4, (linspace(0,1,6000)));
+Hudd5 = interp1(linspace(0,1,length(Hudd5)), Hudd5, (linspace(0,1,6000)));
+Hudd6 = interp1(linspace(0,1,length(Hudd6)), Hudd6, (linspace(0,1,6000)));
+Hudd7 = interp1(linspace(0,1,length(Hudd7)), Hudd7, (linspace(0,1,6000)));
+
+
+Hudds = [Hudd1;Hudd2;Hudd3;Hudd4;Hudd5;Hudd6;Hudd7;];
+HuddAvg = mean(Hudds);
+
+%whod
+[WHod1,fs1] = audioread('C:/project_dataset_cut2/whod/1.wav');
+[WHod2,fs2] = audioread('C:/project_dataset_cut2/whod/2.wav');
+[WHod3,fs3] = audioread('C:/project_dataset_cut2/whod/3.wav');
+[WHod4,fs4] = audioread('C:/project_dataset_cut2/whod/4.wav');
+[WHod5,fs5] = audioread('C:/project_dataset_cut2/whod/5.wav');
+[WHod6,fs6] = audioread('C:/project_dataset_cut2/whod/6.wav');
+[WHod7,fs7] = audioread('C:/project_dataset_cut2/whod/7.wav');
+
+WHod1 = interp1(linspace(0,1,length(WHod1)), WHod1, (linspace(0,1,6500)));
+WHod2 = interp1(linspace(0,1,length(WHod2)), WHod2, (linspace(0,1,6500)));
+WHod3 = interp1(linspace(0,1,length(WHod3)), WHod3, (linspace(0,1,6500)));
+WHod4 = interp1(linspace(0,1,length(WHod4)), WHod4, (linspace(0,1,6500)));
+WHod5 = interp1(linspace(0,1,length(WHod5)), WHod5, (linspace(0,1,6500)));
+WHod6 = interp1(linspace(0,1,length(WHod6)), WHod6, (linspace(0,1,6500)));
+WHod7 = interp1(linspace(0,1,length(WHod7)), WHod7, (linspace(0,1,6500)));
+
+
+WHods = [WHod1;WHod2;WHod3;WHod4;WHod5;WHod6;WHod7;];
+WHodAvg = mean(WHods);
+
+
+
+%-------------- Find the CrossCorelation between Unkown & Reference   ------------------------------
+
+% for i =8:10  
+   
+       %file_path_hade=strcat(training_files_hade(i).folder,'\',training_files_hade(i).name);
+     [Test,fs] = audioread('C:/project_dataset_cut2/hood/9.wav');
+       
+     HadTest= max(abs(xcorr(Test,HadAvg)))
+     HadeTest=max(abs(xcorr(Test,HadeAvg)))
+     HardTest=max(abs(xcorr(Test,HardAvg)))
+     HeadTest=max(abs(xcorr(Test,HeadAvg)))
+     HeardTest=max(abs(xcorr(Test,HeardAvg)))
+     HeedTest=max(abs(xcorr(Test,HeedAvg)))
+     HidTest= max(abs(xcorr(Test,HidAvg)))
+     HideTest=max(abs(xcorr(Test,HideAvg)))
+     HoardTest=max(abs(xcorr(Test,HoardAvg)))
+     HodTest= max(abs(xcorr(Test,HodAvg)))
+     HoodTest=max(abs(xcorr(Test,HoodAvg)))
+     HuddTest=max(abs(xcorr(Test,HuddAvg)))
+     WHodTest= max(abs(xcorr(Test,WHodAvg)))
+     
+     Result = [HadTest; HadeTest; HardTest; HeadTest; HeardTest; HeedTest;
+         HidTest ;HideTest; HoardTest ; HodTest ; HoodTest; HuddTest;  WHodTest; ];
+     
+     [ num,index ] = max(Result);
+    
+     if (index==1)
+       fprintf('It is Had ')
+       elseif (index==2)
+       fprintf('It is Hade ')
+       elseif (index==3)
+       fprintf('It is Hard ')
+       elseif (index==4)
+       fprintf('It is Head ')
+       elseif (index==5)
+       fprintf('It is Heard ')  
+       elseif (index==6)
+       fprintf('It is Heed ')
+       elseif (index==7)
+       fprintf('It is Hid ')
+       elseif (index==8)
+       fprintf('It is Hide ')
+       elseif (index==9)
+       fprintf('It is Hoard ')
+       elseif (index==10)
+       fprintf('It is Hod ')
+       elseif (index==11)
+       fprintf('It is Hood ')
+       elseif (index==12)
+       fprintf('It is Hudd ')
+       elseif (index==13)
+       fprintf('It is Whod ')
+    
+     end
+%          
+%      
+%      
+%      
+%      
+%      
+%      
+%      
+%      
+% % end
